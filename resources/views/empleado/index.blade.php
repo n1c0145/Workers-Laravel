@@ -21,7 +21,13 @@
 <td>{{ $empleado->Nombre }}</td>
 <td>{{ $empleado->Apellido }}</td>
 <td>{{ $empleado->Correo }}</td>
-<td>Editar y Borrar</td>
+<td>Editar 
+    <form action="{{ url('/empleado/'.$empleado->id ) }}" method="post">
+        @csrf
+        {{ method_field('DELETE') }}
+        <input type="submit" onclick="return confirm('Quires borrar')" value="Borrar">
+    </form>
+</td>
     </tr>
     @endforeach
 </tbody> 
