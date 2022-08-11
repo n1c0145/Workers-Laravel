@@ -1,4 +1,10 @@
-<h1>Mostrar lista empleados</h1>
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+
+
+
 <a href="{{url('empleado/create')}}">Registrar nuevo empleado</a>
 
 @if(Session::has('mensaje'))
@@ -42,3 +48,6 @@
 </tbody> 
 
 </table>
+
+</div>
+@endsection
