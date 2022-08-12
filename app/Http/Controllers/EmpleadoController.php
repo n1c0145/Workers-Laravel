@@ -93,6 +93,7 @@ class EmpleadoController extends Controller
     public function update(Request $request, $id)
     {
         //
+        
         $datosEmpleado = request()->except(['_token','_method']);
 
         if ($request->hasFile('Foto')) {
@@ -104,7 +105,9 @@ class EmpleadoController extends Controller
         Empleado::where('id','=',$id)->update($datosEmpleado);
 
         $empleado = Empleado::findOrFail($id);
-        return view('empleado.edit', compact('empleado'));
+       // return view('empleado.edit', compact('empleado'));
+       return redirect('empleado')->with('mensaje','Empleado Modificado');
+
     }
 
     /**

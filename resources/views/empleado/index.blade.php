@@ -8,6 +8,11 @@
 <a href="{{url('empleado/create')}}" class="btn btn-success mb-3">Registrar nuevo empleado</a>
 
 @if(Session::has('mensaje'))
+<div class="alert alert-success">
+
+
+</div>
+
 {{Session::get('mensaje')}}
 @endif
 
