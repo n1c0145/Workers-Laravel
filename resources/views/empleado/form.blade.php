@@ -14,14 +14,14 @@
 @endif
 <div class="form-group">
     <label for="Nombre" class="form-label">Nombre</label>   
-    <input type="text" class="form-control" name="Nombre" value="{{ isset($empleado->Nombre)?$empleado->Nombre:'' }}" id="Nombre">
+    <input type="text" class="form-control" name="Nombre" value="{{ isset($empleado->Nombre)?$empleado->Nombre:old('Nombre')}}" id="Nombre">
 </div>
 <div><label for="Apellido" class="form-label">Apellido</label>  
-<input type="text" class="form-control" name="Apellido" value="{{ isset($empleado->Apellido)?$empleado->Apellido:''}}" id="Apellido">
+<input type="text" class="form-control" name="Apellido" value="{{ isset($empleado->Apellido)?$empleado->Apellido:old('Apellido')}}" id="Apellido">
 </div>
 <div>
 <label for="Correo" class="form-label">Correo</label>   
-<input type="text" class="form-control" name="Correo" value="{{ isset($empleado->Correo)?$empleado->Correo:'' }}" id="Correo">
+<input type="text" class="form-control" name="Correo" value="{{ isset($empleado->Correo)?$empleado->Correo:old('Correo') }}" id="Correo">
 </div>
 <div>
 <label for="Foto" class="form-label">Foto</label>   
