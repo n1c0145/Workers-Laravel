@@ -5,7 +5,7 @@
 
 
 
-<a href="{{url('empleado/create')}}">Registrar nuevo empleado</a>
+<a href="{{url('empleado/create')}}" class="btn btn-success mb-3">Registrar nuevo empleado</a>
 
 @if(Session::has('mensaje'))
 {{Session::get('mensaje')}}
@@ -29,18 +29,19 @@
     <tr>
 <td>{{ $empleado->id }}</td>
 <td>
-<img src="{{ asset('storage').'/'.$empleado->Foto }}" width="100" alt="">   
+<img src="{{ asset('storage').'/'.$empleado->Foto }}" width="100" class="img-thumbnail img-fluid" alt="">   
 </td>
 <td>{{ $empleado->Nombre }}</td>
 <td>{{ $empleado->Apellido }}</td>
 <td>{{ $empleado->Correo }}</td>
 <td>
     
-<a href="{{ url('/empleado/'.$empleado->id.'/edit' )}}">Editar</a>
-    <form action="{{ url('/empleado/'.$empleado->id ) }}" method="post">
+<a href="{{ url('/empleado/'.$empleado->id.'/edit' )}}" class="btn btn-warning">Editar</a>
+
+    <form action="{{ url('/empleado/'.$empleado->id ) }}" method="post" class="d-inline">
         @csrf
         {{ method_field('DELETE') }}
-        <input type="submit" onclick="return confirm('Quires borrar')" value="Borrar">
+        <input type="submit" onclick="return confirm('Quires borrar')" value="Borrar" class="btn btn-danger">
     </form>
 </td>
     </tr>
